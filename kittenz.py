@@ -1,5 +1,8 @@
 #!usr/bin/python
 from tkinter import *
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
 
 # On crée une fenêtre, racine de notre interface
 fenetre = Tk("Miaou")
@@ -7,6 +10,13 @@ fenetre = Tk("Miaou")
 #zone de texte
 text = Text(fenetre)
 text.pack()
+
+#on tente une image wesh, on veut un FUCKING CHATON TROP MIGNON 
+imgpil = Image.open("kitten.png")
+# anciennement np.asarray
+img = np.array(imgpil) # Transformation de l'image en tableau numpy
+plt.imshow(img)
+plt.show()
 
 #couleur du texte
 var_choix = StringVar()
